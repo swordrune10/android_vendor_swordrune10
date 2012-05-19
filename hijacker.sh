@@ -1,5 +1,3 @@
 #!/bin/bash
-su $USER
 cd $REPOS/$SCRIPT_REPO-ics/vendor/swordrune10
-ln overrider.mk $LOCAL_DIR/overrider.mk
-whoami
+ln -s overrider.mk $REPOS/$SCRIPT_REPO-ics/device/*/*/overrider.mk
