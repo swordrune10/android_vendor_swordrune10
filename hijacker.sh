@@ -1,4 +1,4 @@
 #!/bin/bash
-cd $REPOS/$SCRIPT_REPO-ics/vendor/swordrune10
-ln overrider.mk $REPOS/$SCRIPT_REPO-ics/device/samsung/toro/overrider.mk
-ln overrider.mk $REPOS/$SCRIPT_REPO-ics/device/samsung/maguro/overrider.mk
+cd vendor/swordrune10
+echo "$(call inherit-product-if-exists, vendor/swordrune10/overrider.mk)" \
+>> device/samsung/tuna/device.mk
