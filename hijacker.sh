@@ -9,7 +9,6 @@ fi
 cd $local/../../device/*/$SCRIPT_DEVICE
 if ( ! grep -q "overrider.mk" device.mk );then
 	sed -i -e '/# Camera/ i \
-$(call inherit-product, vendor/swordrune10/overrider.mk)
-\' \
+$(call inherit-product, vendor/swordrune10/overrider.mk)' \
 	full_$SCRIPT_DEVICE.mk
 fi
