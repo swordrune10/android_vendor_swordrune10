@@ -15,8 +15,7 @@ fi
 
 if ( ! grep -q "PRODUCT_BUILD_PROP_OVERRIDES" product_config.mk );then
 	sed -i -e '/.PRODUCT_PACKAGE_OVERLAYS/ a \
-PRODUCT_BUILD_PROP_OVERRIDES := \\' \
-	-e '/PRODUCT_BUILD_PROP_OVERRIDES/ a \
+PRODUCT_BUILD_PROP_OVERRIDES := \\ \
                 $(strip $(PRODUCTS.$(INTERNAL_PRODUCT).PRODUCT_BUILD_PROP_OVERRIDES))' \
 	product_config.mk
 fi
