@@ -8,7 +8,7 @@ fi
 cd $local/../../device/*/$SCRIPT_DEVICE
 if ( ! grep -q "overrider.mk" device.mk );then
 	cd $local
-	sed -i -e '/# Everything in this directory will become public/ a \
+	sed -i -e '$ a \
 $(call inherit-product, vendor/swordrune10/overrider.mk)' \
 	../../device/*/$SCRIPT_DEVICE/device.mk
 fi
