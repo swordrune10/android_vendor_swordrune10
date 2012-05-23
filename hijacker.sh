@@ -5,10 +5,10 @@ if ( ! find superuser.pk8 &> /dev/null);then
 	wget https://github.com/ChainsDD/platform_build/raw/master/target/product/security/superuser.pk8
 	wget https://github.com/ChainsDD/platform_build/raw/master/target/product/security/superuser.x509.pem
 fi
-cd $local/../../device/samsung/tuna
+cd $local/../../device/*/$SCRIPT_DEVICE
 if ( ! grep -q "overrider.mk" device.mk );then
 	cd $local
-	sed -i -e '/phone-xhdpi-1024-dalvik-heap.mk/ a \
+	sed -i -e '/# Everything in this directory will become public/ a \
 $(call inherit-product, vendor/swordrune10/overrider.mk)' \
-	../../device/samsung/tuna/device.mk
+	../../device/*/$SCRIPT_DEVICE/device.mk
 fi
