@@ -1,5 +1,6 @@
 #!/bin/bash
-cd vendor/swordrune10
+local="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $local
 sed -i -e '$ a \
 "$(call inherit-product-if-exists, vendor/swordrune10/overrider.mk)"' \
-device/samsung/tuna/device.mk
+../../device/samsung/tuna/device.mk
