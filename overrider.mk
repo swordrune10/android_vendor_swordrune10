@@ -1,4 +1,4 @@
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_BUILD_PROP_OVERRIDES += \
     ro.rommanager.developerid=$(shell whoami) \
     ro.config.ringtone=Ring_Synth_04.ogg \
     ro.config.notification_sound=pixiedust.ogg \
