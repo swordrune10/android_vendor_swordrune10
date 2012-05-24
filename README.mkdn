@@ -1,4 +1,4 @@
-Swordrune10's vendor file
+Swordrune10's vendor tree
 =========================
 <br/>
 A word about vendor/swordrune10(my own device file inside rooted and busyboxed aosp):
