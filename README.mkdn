@@ -1,0 +1,8 @@
+Swordrune10's vendor file
+=========================
+<br/>
+A word about vendor/swordrune10(my own device file inside rooted and busyboxed aosp):
+_____________________________________________________________________________________
+it works by making Android.mk file execute a bash script, which sets up superuser dependencies and attaches a call to overrider.mk file to full_(the device ur building).mk
+currently the directory is messy and doesnt do much other then make sure superuser builds and make your build rom manager ready
+i plan on making it a rather independent device vendor and adding other stuff too
