@@ -1,3 +1,5 @@
+PRODUCT_NAME = swordrune10
+
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.rommanager.developerid=$(shell whoami)
 
