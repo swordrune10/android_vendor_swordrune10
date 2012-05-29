@@ -5,14 +5,11 @@ if ( ! find superuser.pk8 &> /dev/null);then
 	wget https://github.com/ChainsDD/platform_build/raw/master/target/product/security/superuser.x509.pem
 fi
 
-cd $ANDROID_BUILD_TOP/device/*/$TARGET_PRODUCT
+AOSP_BUILD=$(echo $TARGET_PRODUCT | sed -e 's/^full_//g')
+
+cd $ANDROID_BUILD_TOP/device/*/$AOSP_BUILD
 if ( ! find bazinga.mk &> /dev/null);then
-	cp  $ANDROID_BUILD_TOP/vendor/swordrune10/makiefiles/bazinga.mk ./bazinga.mk
-fi
-
-
-if ( grep -q "overrider.mk" full_$TARGET_PRODUCT.mk );then
-	sed -i '/overrider.mk/d' full_$TARGET_PRODUCT.mk
+	cp  $ANDROID_BUILD_TOP/vendor/swordrune10/makefiles/bazinga.mk ./bazinga.mk
 fi
 
 # if ( ! grep -q "overrider.mk" full_$TARGET_PRODUCT.mk );then
