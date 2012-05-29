@@ -8,12 +8,8 @@ fi
 AOSP_BUILD=$(echo $TARGET_PRODUCT | sed -e 's/^full_//g')
 
 cd $ANDROID_BUILD_TOP/device/*/$AOSP_BUILD
-if ( ! find bazinga.mk &> /dev/null);then
-	cp  $ANDROID_BUILD_TOP/vendor/swordrune10/makefiles/bazinga.mk ./AndroidBazinga.mk
+if ( ! grep -q "overrider.mk" $TARGET_PRODUCT.mk );then
+	sed -i -e '/full_base.*.mk/ i \
+$(call inherit-product, vendor/swordrune10/overrider.mk)' \
+	$TARGET_PRODUCT.mk
 fi
-
-# if ( ! grep -q "overrider.mk" full_$TARGET_PRODUCT.mk );then
-#	sed -i -e '/full_base.*.mk/ i \
-# $(call inherit-product, vendor/swordrune10/overrider.mk)' \
-#	full_$TARGET_PRODUCT.mk
-# fi
