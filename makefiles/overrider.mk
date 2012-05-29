@@ -1,7 +1,7 @@
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.rommanager.developerid=$(shell whoami)
 
-MOD_VERSION := rooted-aosp-ics-$(date +%Y%m%d)-$(PRODUCT_VERSION_DEVICE_SPECIFIC)
+MOD_VERSION := rooted-aosp-ics-$(shell date +%Y%m%d)-$(AOSP_BUILD)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
