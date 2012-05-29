@@ -9,7 +9,7 @@ AOSP_BUILD=$(echo $TARGET_PRODUCT | sed -e 's/^full_//g')
 
 cd $ANDROID_BUILD_TOP/device/*/$AOSP_BUILD
 if ( ! find bazinga.mk &> /dev/null);then
-	cp  $ANDROID_BUILD_TOP/vendor/swordrune10/makefiles/bazinga.mk ./bazinga.mk
+	cp  $ANDROID_BUILD_TOP/vendor/swordrune10/makefiles/bazinga.mk ./AndroidBazinga.mk
 fi
 
 # if ( ! grep -q "overrider.mk" full_$TARGET_PRODUCT.mk );then
